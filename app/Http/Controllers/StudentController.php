@@ -44,7 +44,7 @@ class StudentController extends Controller
 
     public function submission() {
         $teacher = User::where('role', 'Teacher')->get(); // Fetch all teachers
-    
+
         return view('student.document-submission', ['teacher' => $teacher]);
     }
 
@@ -52,7 +52,7 @@ class StudentController extends Controller
         $auth = Auth::id();
 
         $documents = DocumentRepository::where('student_id', '=',$auth)->get();
-        
+
         $reviewed = $documents->filter(function ($doc) {
             return !empty($doc->date_reviewed);
         })->pluck('document_id');
@@ -94,20 +94,20 @@ class StudentController extends Controller
             'document_types.required' => 'Please select at least one document type.',
             'document_types.*.in' => 'Invalid document type selected.'
         ]);
-    
+
         $coAuthors = $request->co_authors ? explode(',', $request->co_authors) : [];
         $keywords = $request->keywords ? explode(',', $request->keywords) : [];
         $citations = $request->citations ? explode(',', $request->citations) : [];
         $documentTypes = $request->document_types;
-    
+
         $metadata = [
             'keywords' => $request->keywords,
             'abstract' => $request->abstract,
             'publication_date' => $request->publication_date,
         ];
-    
+
         $fileData = file_get_contents($request->file('file')->getRealPath());
-    
+
         $document = new DocumentRepository();
         $document->title = $request->title;
         $document->student_id = Auth::id();
@@ -120,10 +120,10 @@ class StudentController extends Controller
         $document->date_submitted = now();
         $document->study_type = $documentTypes;
         $document->save(); // ✅ This saves the model
-    
+
         return redirect()->back()->with('success', 'Document submitted successfully!');
     }
-    
+
 
     public function pdf_reader($id) {
         $documentdata = DocumentRepository::findOrFail($id);

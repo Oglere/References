@@ -9,21 +9,21 @@
 </head>
 <body style="height: calc(100% - 61px);">
     <main>
-        <header> 
+        <header>
             <div class="ahh">
                 <img src="../Imgs/DARA.png" alt="" class="ahh">
             </div>
-        </header> 
-         
+        </header>
+
         <div class="main" style="height: 100%;">
             <div class="left">
                 <div class="profile">
                     <h2>{{ auth()->user()->first_name }}</h2>
-                    
+
                 </div>
 
                 <nav class="nav-links">
-                    <a href="" style="color: #04128e; font-weight: normal;"> 
+                    <a href="" style="color: #04128e; font-weight: normal;">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -60,7 +60,7 @@
                             <line x1="12" y1="18" x2="12" y2="12" />
                             <line x1="9" y1="15" x2="15" y2="15" />
                         </svg>
-                    
+
                         Submit Studies
                     </a>
                     <a href="student/document-status">
@@ -86,7 +86,7 @@
                     <div class="asd2" style=" width: 100%; margin-top: 10px; display: flex; justify-content: center;">
                         <div class="asd3" style="border-bottom: 1px solid grey; width: 150px;"></div>
                     </div>
-                    
+
                     <a href="/" class="unq">Search Studies</a>
                     <a href="student/edit" class="unq">Edit Account</a>
 
@@ -119,7 +119,7 @@
                     </form>
                 </nav>
             </div>
- 
+
             <div class="right" style="overflow: auto;">
 
                 <h1>Welcome, {{ auth()->user()->first_name }}! You have</h1>
@@ -243,7 +243,7 @@
                                 <p>REVISIONS TO DO</p>
                             </div>
                         </div>
-                        
+
                         <div class="cards rejected">
                             <div class="svg5">
                                 <svg

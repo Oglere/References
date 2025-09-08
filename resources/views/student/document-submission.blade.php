@@ -10,12 +10,12 @@
 </head>
 <body>
     <main>
-        <header> 
+        <header>
             <div class="ahh">
                 <img src="../../Imgs/DARA.png" alt="" class="ahh">
             </div>
         </header>
-        
+
         <div class="main" style="height: 100%; overflow: hidden;">
             <div class="left">
                 <div class="profile">
@@ -23,7 +23,7 @@
                 </div>
 
                 <nav class="nav-links">
-                    <a href="/student"> 
+                    <a href="/student">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -60,7 +60,7 @@
                             <line x1="12" y1="18" x2="12" y2="12" />
                             <line x1="9" y1="15" x2="15" y2="15" />
                         </svg>
-                    
+
                         Submit Studies
                     </a>
                     <a href="document-status">
@@ -86,7 +86,7 @@
                     <div class="asd2" style=" width: 100%; margin-top: 10px; display: flex; justify-content: center;">
                         <div class="asd3" style="border-bottom: 1px solid grey; width: 150px;"></div>
                     </div>
- 
+
                     <a href="/" class="unq">Search Studies</a>
                     <a href="/student/edit" class="unq">Edit Account</a>
 
@@ -145,7 +145,7 @@
                     Abstract: <textarea name="abstract" required></textarea><br>
                     Co-Authors (comma-separated): <input type="text" name="co_authors"><br>
                     Keywords: <input type="text" name="keywords"><br>
-                    Teacher: 
+                    Teacher:
                     <select name="teacher_id" required>
                         <option id="teachers" value="empty">Select a Teacher</option>
                         @foreach ($teacher as $t)
@@ -156,8 +156,8 @@
                     Citations (comma-separated): <input type="text" name="citations"><br>
 
                     <div class="container">
-                        <div class="card"> 
-                            <h3>Upload File</h3> 
+                        <div class="card">
+                            <h3>Upload File</h3>
                             <div class="drop_box">
                                 <div class="header">
                                     <h4>Select File here</h4>
@@ -169,7 +169,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="asd2" style=" width: 100%; margin-top: 10px; display: flex; justify-content: center;">
                         <div class="asd3" style="border-bottom: 1px solid grey; width: 100%; margin-bottom: 20px;"></div>
                     </div>
@@ -177,7 +177,7 @@
                     <div class="checkboxes">
                         <div class="chkbx">
                             <input class="w3-check" type="checkbox" name="document_types[]" value="Case Study">
-                            <label class="tada">Case Study</label> 
+                            <label class="tada">Case Study</label>
                         </div>
                         <div class="chkbx">
                             <input class="w3-check" type="checkbox" name="document_types[]" value="Thesis">
@@ -207,7 +207,7 @@
                         const inputFile = document.getElementById("fileID");
                         const fileNameDisplay = document.getElementById("fileNameDisplay");
                         const submitButton = document.getElementById("submitButton");
-                        const checkboxes = document.querySelectorAll('.chkbx input'); 
+                        const checkboxes = document.querySelectorAll('.chkbx input');
                         const card = document.getElementsByClassName('card');
                         const teachers = document.getElementById('teachers');
 
@@ -240,14 +240,14 @@
                                     const checkbox = chkbx.querySelector('input[type="checkbox"]');
                                     checkbox.checked = !checkbox.checked;
                                 }
-                                
+
                                 const checkbox = chkbx.querySelector('input[type="checkbox"]');
-                                chkbx.style.backgroundColor = checkbox.checked ? '#04128e' : ''; 
-                                
+                                chkbx.style.backgroundColor = checkbox.checked ? '#04128e' : '';
+
                                 const label = chkbx.querySelector('label');
                                 label.style.color = checkbox.checked ? 'white' : '';
                             });
-                            
+
                         });
 
                         document.getElementById("documentForm").addEventListener("submit", function (event) {
@@ -280,10 +280,10 @@
                             const checkbox = chkbx.querySelector('input[type="checkbox"]');
                             checkbox.checked = !checkbox.checked;
                         }
-                        
+
                         const checkbox = chkbx.querySelector('input[type="checkbox"]');
-                        chkbx.style.backgroundColor = checkbox.checked ? '#04128e' : ''; 
-                        
+                        chkbx.style.backgroundColor = checkbox.checked ? '#04128e' : '';
+
                         const label = chkbx.querySelector('label');
                         label.style.color = checkbox.checked ? 'white' : '';
                     });
